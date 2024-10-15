@@ -6,6 +6,19 @@ from threading import Thread
 import keyboard
 
 class Station:
+  """
+  A class representing a drone control station that manages all drones using socket communication.
+  
+  Responsibilities:
+  1- Registers new drone to the system
+  2- Updates drone positions on the map in real-time
+  3- Prompts commands from station pilot to control the drones
+  
+  What to learn ?
+  1- Managing Threads
+  2- Input Validation
+  
+  """
   __slots__ = ['__map', '__drones', '__server']
   def __init__(self, host, map: Map, port=None):
     self.__drones = {}

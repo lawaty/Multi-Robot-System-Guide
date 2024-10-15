@@ -1,6 +1,6 @@
 import argparse
 
-"""Pretty argument manager interfacing
+"""Pretty argument manager interface
 """
 class Args:
   __slots__ = ['__parser', '__args']

@@ -6,6 +6,13 @@ def time_s():
   return round(time_ns() / 1_000_000_000)
 
 class Drone:
+  """A class simulating a single drone in the system
+
+  Responsibilities:
+  1- Holding robot state including position, action, and speed
+  2- Uses threads to provide real-time robot motion along with real-time communication with the station to receive commands and publish its state as well
+  3- Simulates abstract movement of the robot with speed and direction
+  """
   # Abstraction Assumptions
   MIN_SPEED = 1 # unit/sec
   MAX_SPEED = 3 # unit/sec

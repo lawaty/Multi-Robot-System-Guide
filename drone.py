@@ -1,5 +1,4 @@
 from utils.Args import Args
-
 from classes.Drone import Drone
 
 if __name__ == '__main__':

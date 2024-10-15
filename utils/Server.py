@@ -1,8 +1,13 @@
 from utils.Socket import Socket
     
 class Server(Socket):
-  MAX_TRIALS = 20
+  """
+  A class that extends the Socket class to implement server-related operations.
+  """  
   
+  MAX_TRIALS = 20
+  QUEUE_SIZE = 5
+
   __slots__ = ['_host', '_port', '_socket', '__connected']
   
   def __init__(self, host: any = 'localhost', port: int = 8000, any_port: bool = False):
@@ -22,5 +27,5 @@ class Server(Socket):
     self._socket.listen(self.QUEUE_SIZE)
           
   def accept(self):    
-    conn, addr = self._socket.accept()
+    conn, _ = self._socket.accept()
     return Socket.fromSocket(conn)

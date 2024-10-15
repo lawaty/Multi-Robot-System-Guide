@@ -4,6 +4,9 @@ from datetime import datetime
 
 
 class Map:
+  """
+  Map plot service holds all drones' positions and provides interface for the station to update drones' positions on the map
+  """
   __slots__ = ['__size', '__drones', '__cells', 'running']
   def __init__(self, size: tuple):
     self.__size = size
