@@ -17,3 +17,6 @@ This task is designed to help you learn how to implement cooperative systems usi
 # System Design Walkthrough
 The system mainly consists of three entities which are `Station`, `Drone`, and `Map`. They use some low-level utilities which are `Server` and `Socket` to handle low-level computations that provide them with pretty and straightforward interface to the features. The same applies for `Args`.
 
+System is designed based on `TCP` Socket Communication in a multi-threaded environment to allow real-time functioning. `TCP must be used in any messaging communication model` TCP-related hassle is encapsulated inside the Socket wrapper to provide clear and straightforward interface to higher level classes. Socket wrapper also supports running in the main thread or in another one in addition to `dynamic response sanitizer` callback
+
+Since server is a socket with slight additional edits which are server initialization procedures, A decision was made to implement the server as a subclass to the Socket wrapper and both are considered low-level utilities.

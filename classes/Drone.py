@@ -36,12 +36,6 @@ class Drone:
     self.__moving.start()
     self.__publisher.start()
     print("Drone launched")
-    
-  def kill(self):
-    self.__action = 'stop'
-    self.__conn.kill()
-    self.__moving.stop()
-    self.__moving.join()
   
   def __listen(self):
     while True:
